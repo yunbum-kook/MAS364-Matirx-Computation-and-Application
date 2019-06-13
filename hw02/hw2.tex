@@ -1,0 +1,214 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{arcs}
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{kotex}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage{enumitem}
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{axiom}{Axiom}
+\usepackage{cancel}
+\newtheorem{p}{Problem}
+\newtheorem*{lem}{Lemma}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{exa}[thm]{Examples}
+ \newenvironment{s}{%\small%
+        \begin{trivlist} \item \textbf{Solution}. }{%
+            \hspace*{\fill} $\blacksquare$\end{trivlist}}%
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{HW2, Dept: 수리과학과, NAME: 국윤범}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+\section*{Problem 1 - Exercise 4.3}
+
+\textbf{Problem 1 main script}
+\lstinputlisting{hw2_1.m}
+\textbf{Problem 1 function script}
+\lstinputlisting{transformation.m}
+
+The following is the result of the codes above. (m3, m41, m42, m43, m44 in order)
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.6]{hw2_1a}
+\end{center}
+\begin{center}
+    \includegraphics[scale=0.6]{hw2_1b}
+\end{center}
+\begin{center}
+    \includegraphics[scale=0.6]{hw2_1c}
+\end{center}
+\end{figure}
+\newpage
+
+\begin{figure}
+\begin{center}
+    \includegraphics[scale=0.6]{hw2_1d}
+\end{center}
+\begin{center}
+    \includegraphics[scale=0.6]{hw2_1e}
+\end{center}
+\end{figure}
+
+
+\section*{Problem 2 - Exercise 9.3}
+\lstinputlisting{hw2_2.m}
+
+(a) The result of $spy("HELLO"\ matrix)$
+\begin{center} 
+\includegraphics[scale=0.4]{2a}
+\end{center}
+
+(b)
+(The list of singular values of the matrix)
+\begin{center}
+\includegraphics[scale=0.5]{2b0}
+\end{center}
+
+(plot and semilogy)
+\begin{center}
+\includegraphics[scale=0.3]{2b}
+\end{center}
+\newpage
+
+Mathematically, the exact rank of matrix is 10. Note that each letter has 2 independent column vectors and the last position of `1' in each column vectors in each letter differs by 1. Hence, $2\times 5 = 10$ independent column vectors span the column space.
+
+In fact, we can check out in the first picture under (b) that $rank(mat)$ yields $10$. Also, when counting nonzero singular values in the picture, $0.6329$ is the last nonzero singular values, so that $10$ nonzero singular values exist in total. 
+\\
+
+(c) The following is low rank approximation from $1$ to $10$.
+\begin{center}
+\includegraphics[scale=0.25]{2b1}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.25]{2b2}
+\end{center}
+
+\section*{Problem 3}
+\lstinputlisting{hw2_3.m}
+
+(a)
+\begin{center}
+\includegraphics[scale=0.4]{3a}
+\end{center}
+
+(b)
+\begin{center}
+\includegraphics[scale=0.7]{3b}
+\end{center}
+Since the rank of the matrix is $3$, only 3 left and right singular vectors with 3 singular values are enough to recover the original matrix. Hence, the smallest number of entries to store as data is computed like $rank(matrix)\cdot (1 + 60 + 60)$, where $60$ is the length of singular vectors and $1$ corresponds to singular values.\\
+\newpage
+(c)
+\begin{center}
+\includegraphics[scale=0.4]{3c}
+\end{center}
+
+Comparing (c) with (a), we can conclude that the method in (b) recover the original data without loss of data.
+
+\section*{Problem 4}
+\lstinputlisting{hw2_4.m}
+
+(a)
+\begin{center}
+\includegraphics[scale=0.75]{4a}
+\end{center}
+
+(b)
+\begin{center}
+\includegraphics[scale=0.7]{4b}
+\end{center}
+
+
+(c)
+\begin{center}
+\includegraphics[scale=0.7]{4c}
+\end{center}
+
+
+
+\end{document}
